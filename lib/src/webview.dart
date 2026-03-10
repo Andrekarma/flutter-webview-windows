@@ -630,7 +630,7 @@ class _WebviewState extends State<Webview> {
 
   PointerDeviceKind _pointerKind = PointerDeviceKind.unknown;
 
-  MouseCursor _cursor = SystemMouseCursors.basic;
+  MouseCursor _cursor = SystemMouseCursors.none;
 
   WebviewController get _controller => widget.controller;
 
@@ -649,7 +649,7 @@ class _WebviewState extends State<Webview> {
 
     _cursorSubscription = _controller._cursor.listen((cursor) {
       setState(() {
-        _cursor = cursor;
+        _cursor = SystemMouseCursors.none;
       });
     });
   }
